@@ -3,16 +3,16 @@ public class HelloApp {
         
         // using stringBuilder concepts
         StringBuilder nameBuilder = new StringBuilder();
-
-        for (int i=0; i<args.length; i++){
-            nameBuilder.append(args[i]);
-
-            if(i < args.length - 1){
-                nameBuilder.append(", ");
+        boolean first = true;
+        for (String name : args) {
+            if (!first) {
+                nameBuilder.append(" ");
             }
+            nameBuilder.append(name);
+            first = false;
         }
-
-        System.out.println(nameBuilder.toString());
-
+        String name = nameBuilder.toString();   
+        System.out.println(name);
     }
+
 }
